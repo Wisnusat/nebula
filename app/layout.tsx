@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from 'next/font/google';
+import { ThemeProvider } from "@/components/ui/theme-provider";
 import "./globals.css";
 
 
@@ -25,7 +26,9 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} antialiased`}
       >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );

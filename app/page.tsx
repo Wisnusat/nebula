@@ -1,31 +1,21 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+'use client'
 
+import { Nav } from '@/components/views/nav'
+import { Hero } from '@/components/views/hero'
+import { Trade } from '@/components/views/trade'
 
 export default function Home() {
   return (
-    <div className="flex w-full gap-4 p-8">
-      <h1 className="font-bold text-navy text-6xl">
-        Exchange crypto directly to your <span className="text-[#7BC9FF]">bank</span>
-      </h1>
-      <Card>
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
-    </div>
-  );
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <Nav />
+      <div className="container mx-auto px-4 py-8 md:py-16 flex flex-col md:flex-row items-center justify-between">
+        <div className="w-full md:w-1/2">
+          <Hero />
+        </div>
+        <div className="w-full md:w-1/2 max-w-md mx-auto">
+          <Trade />
+        </div>
+      </div>
+    </main>
+  )
 }
