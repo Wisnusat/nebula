@@ -129,7 +129,7 @@ export function Trade() {
               </div>
             </div>
 
-            <Button className="w-full bg-[#7BC9FF] text-white hover:opacity-90 transition-opacity">
+            <Button className="w-full bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold">
               Connect Wallet to Trade
             </Button>
           </TabsContent>
