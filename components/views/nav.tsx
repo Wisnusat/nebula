@@ -26,7 +26,7 @@ export function Nav() {
         </div>
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <Button className="bg-[#7BC9FF] text-white hover:opacity-90 transition-opacity">
+          <Button className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold">
             Connect Wallet
           </Button>
         </div>
