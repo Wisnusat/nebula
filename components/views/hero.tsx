@@ -26,7 +26,7 @@ export function Hero() {
                 The easiest way to connect your Web3 wallet with all payment gateways in Indonesia.
             </p>
             <div className="flex flex-wrap gap-4 mb-12">
-                <Button size="lg" className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold" onClick={() => router.push("/wallet")}>
+                <Button size="lg" className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold nebula-wallet" onClick={() => router.push("/wallet")}>
                     Nebula Wallet
                     <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>

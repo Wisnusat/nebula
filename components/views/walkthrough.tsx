@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Joyride, { Step, CallBackProps, STATUS } from 'react-joyride'
-import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const steps: Step[] = [
   {
@@ -31,8 +31,12 @@ const steps: Step[] = [
     content: 'On mobile, you can access all features from this bottom navigation bar.',
   },
   {
+    target: '.nebula-wallet',
+    content: 'Try our next generation Nebula Wallet 🔥'
+  },
+  {
     target: '.connect-wallet',
-    content: 'Click this button to connect your wallet'
+    content: 'Click this button to connect your trusted wallet'
   },
   {
     target: '.theme-toggle',
@@ -42,12 +46,19 @@ const steps: Step[] = [
 
 export function Walkthrough() {
   const [run, setRun] = useState(false)
-  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
-    const hasSeenWalkthrough = localStorage.getItem('hasSeenWalkthrough')
-    if (!hasSeenWalkthrough) {
-      setRun(true)
+    if (window !== undefined) {
+      const hasSeenWalkthrough = localStorage.getItem('hasSeenWalkthrough')
+      const hasSeenWalkthroughWallet = localStorage.getItem('hasSeenWalkthroughWallet')
+      if (!hasSeenWalkthrough && pathname.startsWith("/")) {
+        setRun(true)
+      }
+
+      if (!hasSeenWalkthroughWallet && pathname.startsWith("/wallet")) {
+        setRun(true)
+      }
     }
   }, [])
 
@@ -55,7 +66,11 @@ export function Walkthrough() {
     const { status }: any = data
     if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
       setRun(false)
-      localStorage.setItem('hasSeenWalkthrough', 'true')
+      if (pathname.startsWith("/wallet")) {
+        localStorage.setItem('hasSeenWalkthroughWallet', 'true')
+      } else {
+        localStorage.setItem('hasSeenWalkthrough', 'true')
+      }
     }
   }
 
@@ -65,7 +80,7 @@ export function Walkthrough() {
       run={run}
       continuous
       showSkipButton
-    //   showProgress
+      //   showProgress
       styles={{
         options: {
           primaryColor: '#7BC9FF',

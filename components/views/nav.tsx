@@ -2,11 +2,11 @@
 
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
-import { AlignRight, ArrowDownLeft, HelpCircle } from 'lucide-react'
+import { AlignRight } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
+import { Sheet, SheetContent } from '../ui/sheet'
 
 export function Nav() {
   const [isOpen, setOpen] = useState(false)
@@ -20,7 +20,6 @@ export function Nav() {
   };
 
   const menuItems = [
-    { name: 'Home', path: '/home' },
     { name: 'Trade', path: '/' },
     { name: 'Wallet', path: '/wallet' },
   ]

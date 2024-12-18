@@ -1,0 +1,46 @@
+diff --git a/node_modules/react-joyride/dist/index.mjs b/node_modules/react-joyride/dist/index.mjs
+index b5925d5..e91f710 100644
+--- a/node_modules/react-joyride/dist/index.mjs
++++ b/node_modules/react-joyride/dist/index.mjs
+@@ -1192,7 +1192,7 @@ var JoyrideOverlay = class extends React2.Component {
+ 
+ // src/components/Portal.tsx
+ import * as React3 from "react";
+-import * as ReactDOM from "react-dom";
++import * as ReactDOM from "react-dom/client";
+ var JoyridePortal = class extends React3.Component {
+   constructor() {
+     super(...arguments);
+@@ -1223,7 +1223,10 @@ var JoyridePortal = class extends React3.Component {
+       return;
+     }
+     if (!isReact16) {
+-      ReactDOM.unmountComponentAtNode(this.node);
++      if (this.root) {
++        this.root.unmount();
++        this.root = null;
++      }      
+     }
+     if (this.node.parentNode === document.body) {
+       document.body.removeChild(this.node);
+@@ -1236,7 +1239,10 @@ var JoyridePortal = class extends React3.Component {
+     }
+     const { children } = this.props;
+     if (this.node) {
+-      ReactDOM.unstable_renderSubtreeIntoContainer(this, children, this.node);
++      if (!this.root) {
++        this.root = ReactDOM.createRoot(this.node);
++      }
++      this.root.render(children);
+     }
+   }
+   renderReact16() {
+@@ -1247,7 +1253,7 @@ var JoyridePortal = class extends React3.Component {
+     if (!this.node) {
+       return null;
+     }
+-    return ReactDOM.createPortal(children, this.node);
++    return createPortal(children, this.node);
+   }
+   render() {
+     if (!isReact16) {
