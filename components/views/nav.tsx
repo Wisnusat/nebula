@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
-import { AlignRight, ArrowDownLeft } from 'lucide-react'
+import { AlignRight, ArrowDownLeft, HelpCircle } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -42,8 +42,21 @@ export function Nav() {
             ))}
           </div>
           <div className="flex items-center space-x-4">
-            <ThemeToggle />
-            <Button className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold">
+            <div className="theme-toggle">
+              <ThemeToggle />
+            </div>
+            {/* <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => {
+                localStorage.removeItem('hasSeenWalkthrough')
+                window.location.reload()
+              }}
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white md:flex hidden"
+            >
+              <HelpCircle className="h-5 w-5" />
+            </Button> */}
+            <Button className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold connect-wallet">
               Connect Wallet
             </Button>
             <div className="md:hidden flex">
@@ -55,6 +68,17 @@ export function Nav() {
 
       <Sheet open={isOpen} onOpenChange={setOpen}>
         <SheetContent side="right">
+          {/* <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => {
+              localStorage.removeItem('hasSeenWalkthrough')
+              window.location.reload()
+            }}
+            className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex w-full justify-start mb-2"
+          >
+            <HelpCircle className="h-5 w-5" />
+          </Button> */}
           {menuItems.map((item, index) => (
             <Link key={index} href={item?.path} className={`${isActive(item?.path) ? "text-[#7BC9FF] dark:text-[#7BC9FF]" : "text-gray-600 dark:text-gray-300"} hover:text-[#7BC9FF] dark:hover:text-white transition-colors flex flex-col mb-4`}>
               {item?.name}

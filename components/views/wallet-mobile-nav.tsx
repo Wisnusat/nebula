@@ -29,7 +29,7 @@ export function WalletMobileNav() {
 
   return (
     <motion.div 
-      className="fixed bottom-0 left-0 right-0 md:hidden"
+      className="fixed bottom-0 left-0 right-0 md:hidden mobile-nav"
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.3 }}

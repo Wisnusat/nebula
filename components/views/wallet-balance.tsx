@@ -89,7 +89,7 @@ export function WalletBalance({ onTabChange, activeTab }: WalletBalanceProps) {
         </CardContent>
       </Card>
 
-      <div className="hidden md:grid grid-cols-4 gap-3">
+      <div className="hidden md:grid grid-cols-4 gap-3 wallet-actions">
         <Button 
           variant="outline"
           className={`${activeTab === 'send' ? "bg-[#7BC9FF] text-white hover:opacity-90 transition-opacity duration-100" : "border-[#7BC9FF] text-[#7BC9FF] hover:bg-[#7BC9FF]/10"}`}

@@ -3,6 +3,7 @@
 import { Nav } from '@/components/views/nav'
 import { Hero } from '@/components/views/hero'
 import { Trade } from '@/components/views/trade'
+import { Walkthrough } from '@/components/views/walkthrough'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           <Trade />
         </div>
       </div>
+      <Walkthrough />
     </main>
   )
 }

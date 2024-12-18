@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
 import { WalletBalance } from './wallet-balance'
@@ -6,6 +6,7 @@ import { WalletHistory } from './wallet-history'
 import { WalletActions } from './wallet-actions'
 import { WalletPay } from './wallet-pay'
 import { WalletNews } from './wallet-news'
+import { Walkthrough } from './walkthrough'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export function WalletView() {
@@ -30,9 +31,8 @@ export function WalletView() {
     <>
       <div className="flex flex-col md:flex-row gap-8">
         <div className="w-full md:w-[400px]">
-          <WalletBalance onTabChange={setActiveTab} activeTab={activeTab} />
-          <div className="md:hidden mt-8 mb-24">
-            <WalletNews />
+          <div className="wallet-balance">
+            <WalletBalance onTabChange={setActiveTab} activeTab={activeTab} />
           </div>
         </div>
         <AnimatePresence mode="wait">
@@ -44,13 +44,16 @@ export function WalletView() {
             transition={{ duration: 0.2 }}
             className="flex-1 hidden md:block"
           >
-            {renderContent()}
+            <div className={`wallet-${activeTab}`}>
+              {renderContent()}
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="md:block hidden mt-10">
+      <div className="mt-8 wallet-news">
         <WalletNews />
       </div>
+      <Walkthrough />
     </>
   )
 }
