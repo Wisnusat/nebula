@@ -1,35 +1,15 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
-
-const words = ['Local Bank', 'QRIS', 'E-Wallet']
+import { useRouter } from 'next/navigation'
 
 export function Hero() {
-    const [currentWord, setCurrentWord] = useState(words[0])
-    const [fade, setFade] = useState(false)
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setFade(true)
-            setTimeout(() => {
-                setCurrentWord((prevWord) => {
-                    const nextIndex = (words.indexOf(prevWord) + 1) % words.length
-                    return words[nextIndex]
-                })
-                setFade(false)
-            }, 500)
-        }, 2000) // Change word every 2 seconds
-
-        return () => clearInterval(intervalId)
-    }, [])
-
+    const router = useRouter()
     return (
         <div className="relative z-10 max-w-2xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-10 text-gray-900 dark:text-white">
-                Seamless Web3 payments to 
+                Seamless Web3 payments to
                 <span className="inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] overflow-hidden">
                     <ul className="block animate-text-slide-3 text-left leading-tight [&_li]:block text-[#7BC9FF]">
                         <li>Local Bank</li>
@@ -46,8 +26,8 @@ export function Hero() {
                 The easiest way to connect your Web3 wallet with all payment gateways in Indonesia.
             </p>
             <div className="flex flex-wrap gap-4 mb-12">
-                <Button size="lg" className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold">
-                    Connect & Pay
+                <Button size="lg" className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold" onClick={() => router.push("/wallet")}>
+                    Nebula Wallet
                     <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
             </div>
