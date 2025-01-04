@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import "./globals.css";
 import Footer from "@/components/ui/footer";
+import { Nav } from "@/components/views/nav";
 
 
 const poppins = Poppins({
@@ -28,8 +29,9 @@ export default function RootLayout({
         className={`${poppins.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        {children}
-        <Footer />
+          <Nav />
+          {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
