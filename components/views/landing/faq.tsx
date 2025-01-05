@@ -34,25 +34,16 @@ const FAQ = () => {
     return (
         <section
             id="faq"
-            className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+            className="w-full h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
         >
-            <div className="container mx-auto">
-                <div className="grid items-center gap-8 lg:grid-cols-2 p-8 md:p-0">
-                    <motion.img
-                        src="https://shadcnblocks.com/images/block/placeholder-1.svg"
-                        alt="FAQ illustration"
-                        className="max-h-96 w-full rounded-md object-cover hidden md:flex"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                    />
+            <div className="w-full flex justify-center h-full">
+                <div className="flex flex-col items-center px-8 max-w-4xl w-full">
                     <motion.div
-                        className="flex flex-col items-center lg:items-end text-justify"
+                        className="flex flex-col items-center w-full"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
-                        viewport={{ once: false, amount: 0.3 }} // Trigger when 30% of the element is in the viewport
+                        viewport={{ once: false, amount: 0.3 }}
                     >
                         <Link href="#faq">
                             <Badge variant="outline" className="text-gray-700 dark:text-gray-300">
@@ -70,7 +61,7 @@ const FAQ = () => {
 
                         <Accordion
                             type="multiple"
-                            className="w-full max-w-2xl"
+                            className="w-full"
                         >
                             {faqs.map((faq, index) => (
                                 <motion.div

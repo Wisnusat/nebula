@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Trade } from "../trade";
 import { motion } from "framer-motion";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export function Hero() {
     const router = useRouter();
@@ -84,11 +85,12 @@ export function Hero() {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <div className="w-full max-w-md mx-auto">
+                    <div className="w-full max-w-md mx-auto z-50">
                         <Trade />
                     </div>
                 </motion.div>
             </motion.div>
+            <BackgroundBeams />
         </main>
     );
 }
