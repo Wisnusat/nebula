@@ -6,6 +6,7 @@ import { Wallet, CreditCard, ArrowRightLeft, ArrowDownRight } from 'lucide-react
 import { Card } from '@/components/ui/card'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
+import { motion } from 'framer-motion'
 
 const steps = [
   {
@@ -46,33 +47,62 @@ const Tutorial = () => {
               <ArrowDownRight className="ml-2 size-4" />
             </Badge>
           </Link>
-          <h2 className="my-6 text-4xl font-bold lg:text-6xl text-gray-900 dark:text-white">
+          <motion.h2
+            className="my-6 text-4xl font-bold lg:text-6xl text-gray-900 dark:text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
             How to Use Nebula
-          </h2>
+          </motion.h2>
         </div>
         <div className="mt-14 space-y-6">
           {steps.map((step, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="w-full p-6 flex flex-col md:flex-row items-center gap-6 bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-md rounded-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: false, amount: 0.3 }}
             >
-              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 dark:bg-primary/20">
-                <step.icon className="w-8 h-8 text-primary" />
-              </div>
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
-                <p className="text-gray-700 dark:text-gray-400">{step.description}</p>
-              </div>
-              {index === 0 && (
-                <Button
-                  onClick={handleConnectWallet}
-                  className="font-semibold min-w-72 "
-                  disabled={isWalletConnected}
-                >
-                  {isWalletConnected ? "Wallet Connected" : "Connect Wallet"}
-                </Button>
-              )}
-            </Card>
+              <Card
+                className="w-full p-6 flex flex-col md:flex-row items-center gap-6 bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700 shadow-md rounded-lg"
+              >
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 dark:bg-primary/20">
+                  <step.icon className="w-8 h-8 text-primary" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <motion.h3
+                    className="text-xl font-semibold mb-2 text-gray-900 dark:text-white"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                  >
+                    {step.title}
+                  </motion.h3>
+                  <motion.p
+                    className="text-gray-700 dark:text-gray-400"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                  >
+                    {step.description}
+                  </motion.p>
+                </div>
+                {index === 0 && (
+                  <Button
+                    onClick={handleConnectWallet}
+                    className="font-semibold min-w-72 "
+                    disabled={isWalletConnected}
+                  >
+                    {isWalletConnected ? "Wallet Connected" : "Connect Wallet"}
+                  </Button>
+                )}
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -81,4 +111,3 @@ const Tutorial = () => {
 }
 
 export default Tutorial
-

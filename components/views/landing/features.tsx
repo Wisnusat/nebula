@@ -1,53 +1,39 @@
-import {
-    ArrowDownRight,
-    Banknote,
-    DollarSign,
-    MessagesSquare,
-    PersonStanding,
-    ShieldCheck,
-    Timer,
-    Wallet,
-    Zap,
-    ZoomIn,
-} from "lucide-react";
+'use client'
+
+import { ArrowDownRight, Banknote, DollarSign, MessagesSquare, PersonStanding, ShieldCheck, Timer, Wallet, Zap, ZoomIn } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "../../ui/badge";
+import { motion } from 'framer-motion';
 
 const features = [
     {
         title: "Various Transfer Options",
-        description:
-            "Choose from a wide range of payment methods for your convenience.",
+        description: "Choose from a wide range of payment methods for your convenience.",
         icon: <Wallet className="w-12 h-12 text-primary" />,
     },
     {
         title: "Secure Transactions",
-        description:
-            "Your funds and personal information are protected by state-of-the-art security measures.",
+        description: "Your funds and personal information are protected by state-of-the-art security measures.",
         icon: <ShieldCheck className="w-12 h-12 text-primary" />,
     },
     {
         title: "Seamless Transactions",
-        description:
-            "Experience smooth and hassle-free exchanges between fiat and cryptocurrencies.",
+        description: "Experience smooth and hassle-free exchanges between fiat and cryptocurrencies.",
         icon: <Zap className="w-12 h-12 text-primary" />,
     },
     {
         title: "Fast Transactions",
-        description:
-            "Enjoy quick processing times for all your exchange needs.",
+        description: "Enjoy quick processing times for all your exchange needs.",
         icon: <Banknote className="w-12 h-12 text-primary" />,
     },
     {
         title: "Affordability",
-        description:
-            "We offer competitive transaction fees tailored to suit your budget, making cryptocurrency exchanges accessible to everyone.",
+        description: "We offer competitive transaction fees tailored to suit your budget, making cryptocurrency exchanges accessible to everyone.",
         icon: <DollarSign className="w-12 h-12 text-primary" />,
     },
     {
         title: "Customer Support",
-        description:
-            "Our dedicated support team is available 24/7 to assist you with any questions or issues, ensuring a smooth user experience.",
+        description: "Our dedicated support team is available 24/7 to assist you with any questions or issues, ensuring a smooth user experience.",
         icon: <MessagesSquare className="w-12 h-12 text-primary" />,
     },
 ];
@@ -66,27 +52,38 @@ const Features = () => {
                             <ArrowDownRight className="ml-2 size-4" />
                         </Badge>
                     </Link>
-                    <h2 className="my-6 text-4xl font-bold lg:text-6xl text-gray-900 dark:text-white">
+                    <motion.h2
+                        className="my-6 text-4xl font-bold lg:text-6xl text-gray-900 dark:text-white"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                    >
                         Why Choose Nebula?
-                    </h2>
+                    </motion.h2>
                     <div className="mx-auto mt-7 grid gap-x-20 gap-y-8 md:grid-cols-2 md:gap-y-6">
                         {features.map((feature, idx) => (
-                            <div
-                                className="flex gap-6 rounded-lg md:block p-5 bg-gray-100 dark:bg-gray-800 shadow-md"
+                            <motion.div
                                 key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                                viewport={{ once: false, amount: 0.3 }}
                             >
-                                <span className="mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">
-                                    {feature.icon}
-                                </span>
-                                <div>
-                                    <h3 className="font-medium md:mb-2 md:text-xl md:font-semibold text-gray-900 dark:text-white">
-                                        {feature.title}
-                                    </h3>
-                                    <p className="text-sm md:text-base text-gray-700 dark:text-gray-400">
-                                        {feature.description}
-                                    </p>
+                                <div className="flex gap-6 rounded-lg md:block p-5 bg-gray-100 dark:bg-gray-800 shadow-md">
+                                    <span className="mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">
+                                        {feature.icon}
+                                    </span>
+                                    <div>
+                                        <h3 className="font-medium md:mb-2 md:text-xl md:font-semibold text-gray-900 dark:text-white">
+                                            {feature.title}
+                                        </h3>
+                                        <p className="text-sm md:text-base text-gray-700 dark:text-gray-400">
+                                            {feature.description}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

@@ -1,15 +1,11 @@
 'use client'
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from '@/components/ui/accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { ArrowDownRight } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '../../ui/badge'
 import { Button } from '../../ui/button'
+import { motion } from 'framer-motion'
 
 const faqs = [
     {
@@ -42,12 +38,22 @@ const FAQ = () => {
         >
             <div className="container mx-auto">
                 <div className="grid items-center gap-8 lg:grid-cols-2 p-8 md:p-0">
-                    <img
+                    <motion.img
                         src="https://shadcnblocks.com/images/block/placeholder-1.svg"
                         alt="FAQ illustration"
                         className="max-h-96 w-full rounded-md object-cover hidden md:flex"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                        viewport={{ once: false, amount: 0.3 }}
                     />
-                    <div className="flex flex-col items-center lg:items-end text-justify">
+                    <motion.div
+                        className="flex flex-col items-center lg:items-end text-justify"
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: false, amount: 0.3 }} // Trigger when 30% of the element is in the viewport
+                    >
                         <Link href="#faq">
                             <Badge variant="outline" className="text-gray-700 dark:text-gray-300">
                                 FAQ
@@ -67,21 +73,28 @@ const FAQ = () => {
                             className="w-full max-w-2xl"
                         >
                             {faqs.map((faq, index) => (
-                                <AccordionItem
+                                <motion.div
                                     key={index}
-                                    value={`item-${index}`}
-                                    className="border-b border-gray-300 dark:border-gray-700"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8 }}
+                                    viewport={{ once: false, amount: 0.3 }}
                                 >
-                                    <AccordionTrigger className="text-gray-900 dark:text-white">
-                                        {faq.question}
-                                    </AccordionTrigger>
-                                    <AccordionContent className="text-gray-700 dark:text-gray-400">
-                                        {faq.answer}
-                                    </AccordionContent>
-                                </AccordionItem>
+                                    <AccordionItem
+                                        value={`item-${index}`}
+                                        className="border-b border-gray-300 dark:border-gray-700"
+                                    >
+                                        <AccordionTrigger className="text-gray-900 dark:text-white">
+                                            {faq.question}
+                                        </AccordionTrigger>
+                                        <AccordionContent className="text-gray-700 dark:text-gray-400">
+                                            {faq.answer}
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </motion.div>
                             ))}
                         </Accordion>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
@@ -89,4 +102,3 @@ const FAQ = () => {
 }
 
 export default FAQ
-
