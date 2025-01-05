@@ -11,7 +11,7 @@ const About = () => {
             className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
         >
             <div className="container mx-auto">
-                <div className="grid items-center gap-8 lg:grid-cols-2 p-8 md:p-0">
+                <div className="grid items-center gap-8 lg:grid-cols-2 px-8">
                     {/* Left Section */}
                     <motion.div
                         className="flex flex-col items-center lg:items-start text-justify"
@@ -92,9 +92,9 @@ const About = () => {
 
                     {/* Right Section (Image) */}
                     <motion.img
-                        src="https://shadcnblocks.com/images/block/placeholder-1.svg"
+                        src="/assets/mobile-app.svg"
                         alt="placeholder hero"
-                        className="max-h-96 w-full rounded-md object-cover hidden md:flex"
+                        className="w-full rounded-md object-cover hidden md:flex"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
