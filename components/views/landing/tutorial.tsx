@@ -7,6 +7,7 @@ import { Card } from '@/components/ui/card'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { motion } from 'framer-motion'
+import { Trade } from '../trade'
 
 const steps = [
   {
@@ -100,6 +101,11 @@ const Tutorial = () => {
                   >
                     {isWalletConnected ? "Wallet Connected" : "Connect Wallet"}
                   </Button>
+                )}
+                {((index === 1) && isWalletConnected) && (
+                  <div className="max-w-lg">
+                    <Trade/>
+                  </div>
                 )}
               </Card>
             </motion.div>
