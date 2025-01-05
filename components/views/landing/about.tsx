@@ -35,35 +35,48 @@ import Link from "next/link";
 
 const About = () => {
     return (
-        <section id="about" className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+        <section
+            id="about"
+            className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+        >
             <div className="container mx-auto">
                 <div className="grid items-center gap-8 lg:grid-cols-2 p-8 md:p-0">
                     <div className="flex flex-col items-center lg:items-start text-justify">
                         <Link href="#about">
-                            <Badge variant="outline">
+                            <Badge variant="outline" className="text-gray-700 dark:text-gray-300">
                                 About Us
                                 <ArrowDownRight className="ml-2 size-4" />
                             </Badge>
                         </Link>
 
-                        <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
-                            What is <span className="underline decoration-[#7BC9FF] decoration-2 underline-offset-4">Nebula</span>?
+                        <h1 className="my-6 text-gray-800 dark:text-white text-4xl font-bold lg:text-6xl">
+                            What is{" "}
+                            <span className="underline decoration-[#7BC9FF] decoration-2 underline-offset-4">
+                                Nebula
+                            </span>
+                            ?
                         </h1>
 
-                        <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
+                        <p className="mb-8 max-w-xl text-gray-600 dark:text-gray-400 lg:text-md">
                             Nebula is a cutting-edge Web3 wallet exchange platform that bridges the gap between
                             traditional fiat currencies and cryptocurrencies. Our focus is on providing a seamless,
                             secure, and user-friendly experience for exchanging Indonesian Rupiah (IDR) with popular
                             cryptocurrencies like Bitcoin (BTC), Ethereum (ETH), and Solana (SOL).
                         </p>
-                        <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
+                        <p className="mb-8 max-w-xl text-gray-600 dark:text-gray-400 lg:text-md">
                             With Nebula, you can easily connect your Web3 wallet and start exchanging currencies
                             without the need for a separate sign-up process. We prioritize security, speed, and
                             convenience, making cryptocurrency exchanges accessible to everyone.
                         </p>
                         <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                            <Button className="w-full sm:w-auto font-semibold">Try our beta</Button>
-                            <Button variant="outline" className="w-full sm:w-auto font-semibold">
+                            <Button size='lg' className="w-full sm:w-min font-semibold">
+                                Let's exchange!
+                            </Button>
+                            <Button
+                                size='lg'
+                                variant="outline"
+                                className="w-full sm:w-auto font-semibold"
+                            >
                                 Docs
                                 <ArrowDownRight className="ml-2 size-4" />
                             </Button>

@@ -54,29 +54,35 @@ const features = [
 
 const Features = () => {
     return (
-        <section id="features" className="py-14 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-            <div className="container mx-auto p-10 md:p-0">
+        <section
+            id="features"
+            className="py-14 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+        >
+            <div className="container mx-auto px-10 md:px-0">
                 <div className="flex flex-col items-center lg:items-start text-justify">
                     <Link href="#features">
-                        <Badge variant="outline">
+                        <Badge variant="outline" className="text-gray-700 dark:text-gray-300">
                             Features
                             <ArrowDownRight className="ml-2 size-4" />
                         </Badge>
                     </Link>
-                    <h2 className="my-6 text-4xl font-bold lg:text-6xl">
+                    <h2 className="my-6 text-4xl font-bold lg:text-6xl text-gray-900 dark:text-white">
                         Why Choose Nebula?
                     </h2>
                     <div className="mx-auto mt-7 grid gap-x-20 gap-y-8 md:grid-cols-2 md:gap-y-6">
                         {features.map((feature, idx) => (
-                            <div className="flex gap-6 rounded-lg md:block md:p-5" key={idx}>
-                                <span className="mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-accent md:size-12">
+                            <div
+                                className="flex gap-6 rounded-lg md:block md:p-5 bg-gray-100 dark:bg-gray-800 shadow-md"
+                                key={idx}
+                            >
+                                <span className="mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">
                                     {feature.icon}
                                 </span>
                                 <div>
-                                    <h3 className="font-medium md:mb-2 md:text-xl md:font-semibold">
+                                    <h3 className="font-medium md:mb-2 md:text-xl md:font-semibold text-gray-900 dark:text-white">
                                         {feature.title}
                                     </h3>
-                                    <p className="text-sm text-muted-foreground md:text-base">
+                                    <p className="text-sm md:text-base text-gray-700 dark:text-gray-400">
                                         {feature.description}
                                     </p>
                                 </div>

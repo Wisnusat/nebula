@@ -8,9 +8,10 @@ import { Trade } from '../trade'
 export function Hero() {
     const router = useRouter()
     return (
-        <main className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-            <div className="container mx-auto px-4 py-8 md:py-16 flex flex-col md:flex-row items-center justify-between">
-                <div className="w-full md:w-1/2">
+        <main className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300 flex items-center justify-center">
+            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-8">
+                {/* Left Section */}
+                <div className="flex-1 flex flex-col items-start justify-center">
                     <div className="relative z-10 max-w-2xl">
                         <h1 className="text-4xl md:text-6xl font-bold mb-10 text-gray-900 dark:text-white">
                             Seamless Web3 payments to
@@ -30,18 +31,25 @@ export function Hero() {
                             The easiest way to connect your Web3 wallet with all payment gateways in Indonesia.
                         </p>
                         <div className="flex flex-wrap gap-4 mb-12">
-                            <Button size="lg" className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold nebula-wallet" onClick={() => router.push("/wallet")}>
+                            <Button
+                                size="lg"
+                                className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold nebula-wallet"
+                                onClick={() => router.push("/wallet")}
+                            >
                                 Nebula Wallet
                                 <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>
                         </div>
                     </div>
                 </div>
-                <div className="w-full md:w-1/2 max-w-md mx-auto">
-                    <Trade />
+
+                {/* Right Section */}
+                <div className="flex-1 flex items-center justify-center">
+                    <div className="w-full max-w-md mx-auto">
+                        <Trade />
+                    </div>
                 </div>
             </div>
         </main>
-
     )
 }
