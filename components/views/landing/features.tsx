@@ -58,7 +58,7 @@ const Features = () => {
             id="features"
             className="py-14 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
         >
-            <div className="container mx-auto px-10 md:px-0">
+            <div className="container mx-auto p-8 md:p-0">
                 <div className="flex flex-col items-center lg:items-start text-justify">
                     <Link href="#features">
                         <Badge variant="outline" className="text-gray-700 dark:text-gray-300">
@@ -72,7 +72,7 @@ const Features = () => {
                     <div className="mx-auto mt-7 grid gap-x-20 gap-y-8 md:grid-cols-2 md:gap-y-6">
                         {features.map((feature, idx) => (
                             <div
-                                className="flex gap-6 rounded-lg md:block md:p-5 bg-gray-100 dark:bg-gray-800 shadow-md"
+                                className="flex gap-6 rounded-lg md:block p-5 bg-gray-100 dark:bg-gray-800 shadow-md"
                                 key={idx}
                             >
                                 <span className="mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">

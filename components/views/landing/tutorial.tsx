@@ -36,7 +36,7 @@ const Tutorial = () => {
   return (
     <section
       id="tutorial"
-      className="w-full min-h-screen flex flex-col items-center justify-center py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+      className="w-full min-h-screen flex flex-col items-center justify-center py-20 px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
     >
       <div className="container mx-auto">
         <div className="flex flex-col items-center lg:items-start text-justify">
