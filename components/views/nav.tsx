@@ -55,7 +55,7 @@ export function Nav() {
             >
               <HelpCircle className="h-5 w-5" />
             </Button> */}
-            <Button className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold connect-wallet">
+            <Button className="font-semibold dark:text-black">
               Connect Wallet
             </Button>
             <div className="md:hidden flex">

@@ -50,35 +50,56 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-			navy: "#141633"
+  			navy: '#141633'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-		fontFamily: {
-		sans: ['var(--font-poppins)', 'sans-serif'], // Use Poppins globally
-		},
-		animation: {
-			'text-slide-3': 'text-slide-3 7.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
-		},
-		keyframes: {
-			'text-slide-3': {
-    		    '0%, 26.66%': {
-    		        transform: 'translateY(0%)',
-    		    },
-    		    '33.33%, 60%': {
-    		        transform: 'translateY(-25%)',
-    		    },
-    		    '66.66%, 93.33%': {
-    		        transform: 'translateY(-50%)',
-    		    },
-    		    '100%': {
-    		        transform: 'translateY(-75%)',
-    		    },
-    		},                   
-		},	
+  		fontFamily: {
+  			sans: [
+  				'var(--font-poppins)',
+  				'sans-serif'
+  			]
+  		},
+  		animation: {
+  			'text-slide-3': 'text-slide-3 7.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		},
+  		keyframes: {
+  			'text-slide-3': {
+  				'0%, 26.66%': {
+  					transform: 'translateY(0%)'
+  				},
+  				'33.33%, 60%': {
+  					transform: 'translateY(-25%)'
+  				},
+  				'66.66%, 93.33%': {
+  					transform: 'translateY(-50%)'
+  				},
+  				'100%': {
+  					transform: 'translateY(-75%)'
+  				}
+  			},
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
