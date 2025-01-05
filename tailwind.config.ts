@@ -62,6 +62,7 @@ export default {
 		},
 		animation: {
 			'text-slide-3': 'text-slide-3 7.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+			'meteor-effect': 'meteor 5s linear infinite',
 		},
 		keyframes: {
 			'text-slide-3': {
@@ -77,7 +78,15 @@ export default {
     		    '100%': {
     		        transform: 'translateY(-75%)',
     		    },
-    		},                   
+    		}, 
+			meteor: {
+				"0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+				"70%": { opacity: "1" },
+				"100%": {
+				  transform: "rotate(215deg) translateX(-500px)",
+				  opacity: "0",
+				},
+			},                  
 		},	
   	}
   },
