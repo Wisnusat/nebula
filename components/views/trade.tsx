@@ -198,7 +198,7 @@ export function Trade() {
                   </div>
                 </SelectValue>
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className='bg-white'>
                 {payment_methods.map((c) => (
                   <SelectItem key={c.value} value={c.value}>
                     <div className="flex items-center">

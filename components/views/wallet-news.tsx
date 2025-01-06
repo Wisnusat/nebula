@@ -61,7 +61,7 @@ export function WalletNews() {
   const [selectedNews, setSelectedNews] = useState<typeof news[0] | null>(null)
 
   return (
-    <Card className="h-full dark:bg-gray-900">
+    <Card className="h-full dark:bg-gray-900 bg-white">
       <CardHeader>
         <CardTitle>Crypto News</CardTitle>
       </CardHeader>
@@ -71,7 +71,7 @@ export function WalletNews() {
             {news.map((item) => (
               <Card
                 key={item.id}
-                className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors bg-white"
                 onClick={() => setSelectedNews(item)}
               >
                 <CardContent className="p-4">

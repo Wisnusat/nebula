@@ -33,7 +33,7 @@ const transactions = [
 
 export function WalletHistory() {
   return (
-    <Card className="h-full">
+    <Card className="h-full bg-white">
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle>Recent Activity</CardTitle>
         {/* <button className="text-sm text-[#7BC9FF]">View all</button> */}

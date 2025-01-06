@@ -29,7 +29,7 @@ export function WalletView() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8 bg-gray-50">
         <div className="w-full md:w-[400px]">
           <div className="wallet-balance">
             <WalletBalance onTabChange={setActiveTab} activeTab={activeTab} />
