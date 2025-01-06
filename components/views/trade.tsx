@@ -215,7 +215,7 @@ export function Trade() {
         <div className="w-full bg-gray-50 dark:bg-gray-700 rounded-lg px-3 py-2">
           <Collapsible open={isOpen} onOpenChange={setIsOpen}>
             <CollapsibleTrigger className="flex w-full items-center justify-between">
-              <span className="text-sm text-white">Estimation of {(parseFloat(amount || '0') / quote).toFixed(8)} {crypto.label} for {amount || 0} {currency.label}</span>
+              <span className="text-sm dark:text-white text-gray-900">Estimation of {(parseFloat(amount || '0') / quote).toFixed(8)} {crypto.label} for {amount || 0} {currency.label}</span>
               {isOpen ? (
                 <ChevronUp className="h-4 w-4 opacity-50" />
               ) : (
