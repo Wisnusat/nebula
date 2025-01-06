@@ -120,7 +120,7 @@ export function Trade() {
                 <SelectTrigger className="w-[100px]">
                   <SelectValue>{currency.flag} {currency.label}</SelectValue>
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className='bg-white'>
                   {currencies.map((c) => (
                     <SelectItem key={c.value} value={c.value}>
                       {c.flag} {c.label}
@@ -166,7 +166,7 @@ export function Trade() {
                     </div>
                   </SelectValue>
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className='bg-white'>
                   {cryptos.map((c) => (
                     <SelectItem key={c.value} value={c.value}>
                       <div className="flex items-center">

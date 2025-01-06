@@ -30,7 +30,7 @@ export function WalletPay() {
             Scan QR Code
           </Button>
         </SheetTrigger>
-        <SheetContent side="bottom" className="h-[80vh]">
+        <SheetContent side="bottom" className="h-[80vh] bg-white">
           <SheetHeader>
             <SheetTitle>Scan QR Code</SheetTitle>
           </SheetHeader>

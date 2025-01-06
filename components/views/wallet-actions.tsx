@@ -25,7 +25,7 @@ export function WalletActions({ type }: WalletActionsProps) {
 
   if (type === 'receive') {
     return (
-      <div className="space-y-6">
+      <div className="space-y-6 bg-gray-50">
         <div className="text-center p-8 border-2 border-dashed rounded-lg">
           <QrCode className="w-32 h-32 mx-auto mb-4 text-gray-400" />
           <p className="text-sm text-gray-500 dark:text-gray-400 break-all">
@@ -40,7 +40,7 @@ export function WalletActions({ type }: WalletActionsProps) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 bg-gray-50">
       <div className="space-y-2">
         <Label>Token</Label>
         <Select
@@ -60,7 +60,7 @@ export function WalletActions({ type }: WalletActionsProps) {
               </div>
             </SelectValue>
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className='bg-white'>
             {tokens.map((token) => (
               <SelectItem key={token.symbol} value={token.symbol}>
                 <div className="flex items-center gap-2">

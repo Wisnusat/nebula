@@ -28,7 +28,7 @@ export function WalletView() {
   }
 
   return (
-    <>
+    <div className='bg-gray-50'>
       <div className="flex flex-col md:flex-row gap-8 bg-gray-50">
         <div className="w-full md:w-[400px]">
           <div className="wallet-balance">
@@ -54,6 +54,6 @@ export function WalletView() {
         <WalletNews />
       </div>
       <Walkthrough />
-    </>
+    </div>
   )
 }
