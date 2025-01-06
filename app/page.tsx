@@ -1,27 +1,19 @@
 "use client"
 
-import { Nav } from '@/components/views/nav'
-import { Hero } from '@/components/views/hero'
-import { Trade } from '@/components/views/trade'
-import { Walkthrough } from '@/components/views/walkthrough'
-import { Meteors } from '@/components/ui/meteors'
+import { Hero } from '@/components/views/landing/hero'
+import FAQ from '@/components/views/landing/faq'
+import About from '@/components/views/landing/about'
+import Feature from '@/components/views/landing/features'
+import Tutorial from '@/components/views/landing/tutorial'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <Nav />
-      <div className='relative overflow-hidden'>
-        <Meteors number={30} />
-        <div className="container mx-auto px-4 py-8 md:py-16 flex flex-col md:flex-row items-center justify-between">
-          <div className="w-full md:w-1/2">
-            <Hero />
-          </div>
-          <div className="w-full md:w-1/2 max-w-md mx-auto">
-            <Trade />
-          </div>
-        </div>
-        <Walkthrough />
-      </div>
-    </main>
+    <>
+      <Hero />
+      <About/>
+      <Tutorial/>
+      <Feature/>
+      <FAQ/>
+    </>
   )
 }

@@ -26,7 +26,7 @@ export function Nav() {
 
   return (
     <>
-      <nav className="w-full bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <nav className="w-full bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 z-50 relative">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <span className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -55,7 +55,7 @@ export function Nav() {
             >
               <HelpCircle className="h-5 w-5" />
             </Button> */}
-            <Button className="bg-[#7BC9FF] dark:text-black hover:opacity-90 transition-opacity font-semibold connect-wallet">
+            <Button className="font-semibold dark:text-black">
               Connect Wallet
             </Button>
             <div className="md:hidden flex">
